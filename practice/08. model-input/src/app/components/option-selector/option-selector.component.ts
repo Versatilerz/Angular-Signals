@@ -6,12 +6,12 @@ import { Component, input, model, signal } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './option-selector.component.html',
-  styleUrl: './option-selector.component.scss'
+  styleUrl: './option-selector.component.scss',
 })
 export class OptionSelectorComponent {
   options = input.required<string[]>();
 
-  selected = signal('USD');
+  selected = model.required<string>();
 
   select(option: string) {
     this.selected.set(option);
